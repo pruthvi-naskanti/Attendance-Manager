@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner=findViewById(R.id.spinnerloginas);
         spinner.setOnItemSelectedListener(this);
 
-
+ 
     }
 
 
