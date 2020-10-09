@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Attendance Manager</string>
+    <string-array name="spinnerloginas_items">
+        <item>Admin</item>
+        <item>Faculty</item>
+    </string-array>
+
 </resources>
