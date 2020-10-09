@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner=findViewById(R.id.spinnerloginas);
         spinner.setOnItemSelectedListener(this);
 
- 
+
     }
 
 
@@ -36,6 +36,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void loginclick(View v) {
+        userrole =spinner.getSelectedItem().toString();
+        if(userrole.equals("Admin")) {
+            Intent I = new Intent(getApplicationContext(), MenuActivity.class);
+            startActivity(I);
+            setContentView(R.layout.home_screen);
+        }
+        else{
+            Intent I = new Intent(getApplicationContext(), AddAttendanceActivity.class);
+            startActivity(I);
+            setContentView(R.layout.add_attendance);
+        }
 
     }
 }

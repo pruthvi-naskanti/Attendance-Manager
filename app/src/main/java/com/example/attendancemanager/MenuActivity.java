@@ -1,4 +1,6 @@
 package com.example.attendancemanager;
 
-public class MenuActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MenuActivity extends AppCompatActivity {
 }
