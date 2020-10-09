@@ -24,6 +24,18 @@
             android:name="com.example.attendancemanager.AddAttendanceActivity"
             android:label="AndroidAttendanceManager">
         </activity>
+        <activity
+            android:name="com.example.attendancemanager.ViewStudentActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.AddStudentActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.RemoveStudentActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
     </application>
 
 </manifest>
