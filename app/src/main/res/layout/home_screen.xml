@@ -9,7 +9,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".MenuActivity">
+    tools:context=".HomeScreenActivity">
 
     <Button
         android:id="@+id/buttonViewstudent"
@@ -84,7 +84,6 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="502dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="rmstu"
         android:text="Remove Student"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.attendancemanager.MenuActivity"
+            android:name="com.example.attendancemanager.HomeScreenActivity"
             android:label="AndroidAttendanceManager">
         </activity>
         <activity

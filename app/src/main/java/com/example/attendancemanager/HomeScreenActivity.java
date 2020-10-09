@@ -6,8 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MenuActivity extends AppCompatActivity {
-
+public class HomeScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +14,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.home_screen);
 
     }
+
 
     public void addstu(View v) {
         Intent I = new Intent(getApplicationContext(), AddStudentActivity.class);
@@ -27,10 +27,6 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(vintent);
         setContentView(R.layout.view_student);
     }
-    public void rmstu(View v){
-        Intent vintent=new Intent(getApplicationContext(), RemoveStudentActivity.class);
-        startActivity(vintent);
-        setContentView(R.layout.remove_student);
-    }
+
 
 }
