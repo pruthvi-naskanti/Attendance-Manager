@@ -28,4 +28,8 @@ public class AddStudentActivity extends AppCompatActivity {
         startActivity(I);
         setContentView(R.layout.home_screen);
     }
+
+
+
+
 }
