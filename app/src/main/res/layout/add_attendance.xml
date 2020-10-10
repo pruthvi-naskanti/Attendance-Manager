@@ -9,7 +9,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".MainActivity">
+    tools:context=".AddAttendanceSessionActivity">
 
     <TextView
         android:id="@+id/textView1"
@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="67dp"
+        android:entries="@array/spinnerdept_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
@@ -60,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="-1dp"
         android:layout_marginTop="34dp"
+        android:entries="@array/spinnersubject_item"
         app:layout_constraintLeft_toLeftOf="@+id/spinneryear"
         app:layout_constraintTop_toBottomOf="@+id/spinneryear" />
 
@@ -69,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="31dp"
+        android:entries="@array/spinneryear_item"
         app:layout_constraintLeft_toLeftOf="@+id/spinner1"
         app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
@@ -114,6 +117,7 @@
         android:layout_marginTop="42dp"
         android:layout_marginRight="14dp"
         android:background="@drawable/roundedbutton"
+        android:contextClickable="false"
         android:text="Add Attendance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

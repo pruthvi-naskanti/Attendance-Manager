@@ -36,6 +36,10 @@
             android:name="com.example.attendancemanager.RemoveStudentActivity"
             android:label="AndroidAttendanceManager">
         </activity>
+        <activity
+            android:name="com.example.attendancemanager.AddAttendanceSessionActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
     </application>
 
 </manifest>

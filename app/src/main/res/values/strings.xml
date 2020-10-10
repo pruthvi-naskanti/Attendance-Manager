@@ -4,5 +4,22 @@
         <item>Admin</item>
         <item>Faculty</item>
     </string-array>
+    <string-array name="spinnerdept_item">
+        <item>ACS</item>
+        <item>IS</item>
+        <item>DS</item>
+    </string-array>
+    <string-array name="spinneryear_item">
+        <item>Spring-2020</item>
+        <item>Fall-2020</item>
+        <item>Spring-2021</item>
+    </string-array>
+    <string-array name="spinnersubject_item">
+        <item>Android</item>
+        <item>Java</item>
+        <item>IOS</item>
+        <item>ML</item>
+        <item>ADB</item>
+    </string-array>
 
 </resources> 

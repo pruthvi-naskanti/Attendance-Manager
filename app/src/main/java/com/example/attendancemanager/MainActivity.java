@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             setContentView(R.layout.home_screen);
         }
         else{
-            Intent I = new Intent(getApplicationContext(), AddAttendanceActivity.class);
+            Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
             startActivity(I);
             setContentView(R.layout.add_attendance);
         }
