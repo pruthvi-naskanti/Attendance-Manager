@@ -22,7 +22,7 @@ public class AddFaculty extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
-                setContentView(R.layout.home_screen);
+                //setContentView(R.layout.home_screen);
             }
         });
     }
@@ -31,6 +31,6 @@ public class AddFaculty extends AppCompatActivity {
     public void cancel(View v) {
         Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
         startActivity(I);
-        setContentView(R.layout.home_screen);
+        //setContentView(R.layout.home_screen);
     }
 }

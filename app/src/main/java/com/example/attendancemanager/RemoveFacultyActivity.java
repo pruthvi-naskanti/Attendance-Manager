@@ -22,7 +22,7 @@ public class RemoveFacultyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
-                setContentView(R.layout.home_screen);
+                //setContentView(R.layout.home_screen);
                 Toast.makeText(getApplicationContext(), "Removed Faculty", Toast.LENGTH_LONG).show();
             }
         });
@@ -32,7 +32,7 @@ public class RemoveFacultyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
-                setContentView(R.layout.home_screen);
+                //setContentView(R.layout.home_screen);
             }
         });
 

@@ -21,7 +21,7 @@ public class ViewStudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I = new Intent(getApplicationContext(), ViewStudentListActivity.class);
                 startActivity(I);
-                setContentView(R.layout.listview_main);
+                //setContentView(R.layout.listview_main);
             }
         });
 

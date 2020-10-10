@@ -1,4 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#18a34b"
@@ -7,202 +9,217 @@
     android:paddingRight="16dp"
     android:paddingBottom="16dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout4"
         android:layout_width="match_parent"
         android:layout_height="700dp"
-        android:background="#18a34b">
+        android:background="#18a34b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <TextView
             android:id="@+id/textViewFormName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Faculty Registration"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewFormName"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="10dp"
             android:text="firstname"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFormName" />
 
-        <requestFocus />
+        <requestFocus
+            android:id="@+id/requestFocus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextFirstName"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewFirstName"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="5dp"
             android:background="@drawable/roundedtextview"
             android:ems="10"
             android:hint="firstname"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFirstName" />
 
         <TextView
             android:id="@+id/textViewLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextFirstName"
-            android:layout_alignLeft="@+id/editTextFirstName"
             android:layout_marginTop="15dp"
             android:text="lastname"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
 
         <EditText
             android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewLastName"
-            android:layout_alignLeft="@+id/textViewLastName"
             android:layout_marginTop="5dp"
             android:background="@drawable/roundedtextview"
             android:ems="10"
             android:hint="lastname"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewLastName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLastName" />
 
         <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextLastName"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="10dp"
             android:text=""
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewPhone"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:background="@drawable/roundedtextview"
             android:ems="10"
             android:hint="phone"
             android:inputType="phone"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
 
         <TextView
             android:id="@+id/textViewUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextPhone"
-            android:layout_alignLeft="@+id/editTextPhone"
             android:layout_marginTop="15dp"
             android:text="Address"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextPhone"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
         <Button
             android:id="@+id/Cancel_Button"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_above="@+id/MessageforRegister"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="18dp"
+            android:layout_width="102dp"
+            android:layout_height="52dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="54dp"
             android:onClick="cancel"
-            android:text="cancle"
-            android:textColor="#ffffff" />
+            android:text="Cancel"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.959" />
 
         <Button
             android:id="@+id/RegisterButton"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/editTextPassword"
-            android:layout_alignParentLeft="true"
+            android:layout_width="118dp"
+            android:layout_height="51dp"
             android:layout_marginLeft="26dp"
             android:layout_marginTop="51dp"
             android:text="submit"
-            android:textColor="#ffffff" />
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
         <TextView
             android:id="@+id/MessageforRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/RegisterButton"
             android:layout_marginTop="54dp"
-            android:layout_toRightOf="@+id/textViewUserName"
             android:text=""
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toRightOf="@+id/textViewUserName"
+            app:layout_constraintTop_toBottomOf="@+id/RegisterButton" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewPassword"
-            android:layout_alignParentLeft="true"
             android:background="@drawable/roundedtextview"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
         <EditText
             android:id="@+id/editTextUserName"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewUserName"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="59dp"
             android:background="@drawable/roundedtextview"
             android:ems="10"
             android:hint="username"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
 
         <TextView
             android:id="@+id/textViewPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextUserName"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="14dp"
             android:text="password"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
         <EditText
             android:id="@+id/editTextaddr"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_below="@+id/textViewUserName"
-            android:layout_alignParentRight="true"
             android:background="@drawable/roundedtextview"
             android:ems="10"
-            android:hint="address" />
+            android:hint="address"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
 
         <TextView
             android:id="@+id/textViewPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewEmail"
-            android:layout_alignRight="@+id/textViewPassword"
-            android:layout_alignBottom="@+id/textViewEmail"
             android:text="Mobileno"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewEmail"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewEmail"
+            app:layout_constraintRight_toRightOf="@+id/textViewPassword" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextaddr"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="18dp"
             android:text="Username"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextaddr" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

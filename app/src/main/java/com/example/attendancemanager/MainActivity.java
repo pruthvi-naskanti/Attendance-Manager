@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if(userrole.equals("Admin")) {
             Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
             startActivity(I);
-            setContentView(R.layout.home_screen);
+            //setContentView(R.layout.home_screen);
         }
         else{
             Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
             startActivity(I);
-            setContentView(R.layout.add_attendance);
+            //setContentView(R.layout.add_attendance);
         }
 
     }

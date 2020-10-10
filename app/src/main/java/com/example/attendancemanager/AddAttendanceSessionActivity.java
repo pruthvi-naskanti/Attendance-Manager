@@ -24,21 +24,21 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
     public void view_attendance(View v){
         Intent I = new Intent(getApplicationContext(), ViewAttendanceByFacultyActivity.class);
         startActivity(I);
-        setContentView(R.layout.listview_main);
+        //setContentView(R.layout.listview_main);
     }
 
 
       public void addattendance(View v) {
           Intent I = new Intent(getApplicationContext(), AddAttendanceActivity.class);
           startActivity(I);
-          setContentView(R.layout.listview_main);
+          //setContentView(R.layout.listview_main);
 
       }
 
     public void view_total_attendance(View v){
         Intent I = new Intent(getApplicationContext(), ViewAttendanceByFacultyActivity.class);
         startActivity(I);
-        setContentView(R.layout.listview_main);
+        //setContentView(R.layout.listview_main);
     }
 
 

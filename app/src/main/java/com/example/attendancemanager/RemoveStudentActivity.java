@@ -25,7 +25,7 @@ public class RemoveStudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
-                setContentView(R.layout.home_screen);
+               // setContentView(R.layout.home_screen);
                 Toast.makeText(getApplicationContext(), "Removed Student", Toast.LENGTH_LONG).show();
             }
         });
@@ -35,7 +35,7 @@ public class RemoveStudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
-                setContentView(R.layout.home_screen);
+                //setContentView(R.layout.home_screen);
             }
         });
 
