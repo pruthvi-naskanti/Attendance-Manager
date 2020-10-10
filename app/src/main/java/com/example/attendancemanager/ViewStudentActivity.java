@@ -13,14 +13,7 @@ public class ViewStudentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_student);
+        
 
     }
-
-//    public void submitbtn(View v) {
-//        Intent I = new Intent(getApplicationContext(), ViewAttendanceList.class);
-//        startActivity(I);
-//        setContentView(R.layout.view_attendence_list);
-//        Toast.makeText(getApplicationContext(), "List of students in Class", Toast.LENGTH_LONG).show();
-//    }
-
 }
