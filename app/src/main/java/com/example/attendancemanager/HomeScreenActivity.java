@@ -28,5 +28,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.view_student);
     }
 
+    public void removestu(View v){
+        Intent vintent=new Intent(getApplicationContext(), RemoveStudentActivity.class);
+        startActivity(vintent);
+        setContentView(R.layout.remove_student);
+    }
+
 
 }
