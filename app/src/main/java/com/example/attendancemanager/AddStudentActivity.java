@@ -22,4 +22,10 @@ public class AddStudentActivity extends AppCompatActivity {
         setContentView(R.layout.home_screen);
         Toast.makeText(getApplicationContext(), "Student Successfully Added", Toast.LENGTH_LONG).show();
     }
+
+    public void cancel(View v) {
+        Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
+        startActivity(I);
+        setContentView(R.layout.home_screen);
+    }
 }
