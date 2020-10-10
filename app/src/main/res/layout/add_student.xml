@@ -147,6 +147,7 @@
             android:layout_below="@+id/spinneryear"
             android:layout_marginTop="43dp"
             android:background="@drawable/roundedbutton"
+            android:onClick="submit"
             android:text="submit"
             android:textColor="#ffffff" />
     </RelativeLayout>
