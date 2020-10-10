@@ -19,27 +19,27 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_attendance);
         submit=findViewById(R.id.buttonsubmit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent I = new Intent(getApplicationContext(), AddAttendanceActivity.class);
-                startActivity(I);
-                setContentView(R.layout.listview_main);
-            }
-        });
+    }
+
+    public void view_attendance(View v){
+        Intent I = new Intent(getApplicationContext(), ViewAttendanceByFacultyActivity.class);
+        startActivity(I);
+        setContentView(R.layout.listview_main);
     }
 
 
-
-
-
-
-/*      public void addattendance(View v) {
+      public void addattendance(View v) {
           Intent I = new Intent(getApplicationContext(), AddAttendanceActivity.class);
           startActivity(I);
           setContentView(R.layout.listview_main);
 
-      }*/
+      }
+
+    public void view_total_attendance(View v){
+        Intent I = new Intent(getApplicationContext(), ViewAttendanceByFacultyActivity.class);
+        startActivity(I);
+        setContentView(R.layout.listview_main);
+    }
 
 
 }
