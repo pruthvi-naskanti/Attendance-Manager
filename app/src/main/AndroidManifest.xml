@@ -44,6 +44,28 @@
             android:name="com.example.attendancemanager.ViewAttendanceByFacultyActivity"
             android:label="AndroidAttendanceManager">
         </activity>
+        <activity
+            android:name="com.example.attendancemanager.AttendancePerStu"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.AddFaculty"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.RemoveFacultyActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.ViewFacultyActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
+        <activity
+            android:name="com.example.attendancemanager.ViewStudentListActivity"
+            android:label="AndroidAttendanceManager">
+        </activity>
+
+
     </application>
 
 </manifest>

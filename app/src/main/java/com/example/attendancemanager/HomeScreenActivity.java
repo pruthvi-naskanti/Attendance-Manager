@@ -35,9 +35,9 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
     public void attendanceperstudent(View v){
-        Intent vintent=new Intent(getApplicationContext(), AttendancePerStu.class);
-        startActivity(vintent);
-        setContentView(R.layout.view_attendance_list_per_student);
+        Intent I=new Intent(getApplicationContext(), AttendancePerStu.class);
+        startActivity(I);
+        setContentView(R.layout.listview_main);
     }
 
     public void AddFaculty(View v) {
@@ -45,6 +45,24 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(I);
         setContentView(R.layout.add_faculty);
     }
+    public void Viewfaculty(View v) {
+        Intent I = new Intent(getApplicationContext(), ViewFacultyActivity.class);
+        startActivity(I);
+        setContentView(R.layout.view_faculty_list);
+    }
+    public void Removefaculty(View v) {
+        Intent I = new Intent(getApplicationContext(), RemoveFacultyActivity.class);
+        startActivity(I);
+        setContentView(R.layout.remove_faculty);
+    }
+
+    public void logout(View v) {
+        Intent I = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(I);
+        setContentView(R.layout.activity_main);
+    }
+
+
     }
 
 

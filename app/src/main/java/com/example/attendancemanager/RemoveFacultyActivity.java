@@ -8,29 +8,26 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RemoveStudentActivity extends AppCompatActivity {
-
-    Button REMOVE;
-    Button CANCEL;
-
+public class RemoveFacultyActivity extends AppCompatActivity {
+    Button Remove;
+    Button Cancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.remove_student);
-        REMOVE=findViewById(R.id.removebtn);
-        CANCEL=findViewById(R.id.cbtn);
-
-        REMOVE.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.remove_faculty);
+        Remove=findViewById(R.id.facremovebtn);
+        Cancel=findViewById(R.id.faccbtn);
+        Remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
                 setContentView(R.layout.home_screen);
-                Toast.makeText(getApplicationContext(), "Removed Student", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Removed Faculty", Toast.LENGTH_LONG).show();
             }
         });
 
-        CANCEL.setOnClickListener(new View.OnClickListener() {
+        Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent I=new Intent(getApplicationContext(), HomeScreenActivity.class);
@@ -38,11 +35,6 @@ public class RemoveStudentActivity extends AppCompatActivity {
                 setContentView(R.layout.home_screen);
             }
         });
-
-
 
     }
-
-
-
 }
