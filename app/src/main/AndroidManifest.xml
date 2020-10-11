@@ -65,6 +65,7 @@
             android:label="AndroidAttendanceManager">
         </activity>
 
+        <activity android:name=".DialogueActivity"></activity>
 
     </application>
 
