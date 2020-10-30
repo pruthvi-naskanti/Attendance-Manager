@@ -40,10 +40,17 @@ public class AddFaculty extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String usrname=UserName.getText().toString().trim();
+                String pwd=password.getText().toString().trim();
                 if(TextUtils.isEmpty(usrname)){
                     UserName.setError("Username is Required");
                     return;
                 }
+                if(TextUtils.isEmpty(pwd)){
+                    password.setError("Password is Empty");
+                    return;
+                }
+
+
                 Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
                 //setContentView(R.layout.home_screen);
