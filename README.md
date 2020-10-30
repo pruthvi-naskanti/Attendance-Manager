@@ -9,7 +9,7 @@
 ## Statement of Purpose:
 Our idea is to develop an application where faculty will be able to enter, monitor and manage attendance. This attendance system will be installed on the smartphone of the instructor. We aim to create an interface for the instructor that would require limited input information from the professor for marking the attendance of a class. 
 
-## ssues our application address:
+## Issues our application address:
 We have seen the process of manual attendance that has been carried out in colleges over the years. As this manual attendance system is not only time consuming but it’s can often result in false attendance marking. Apart from that, Paper and pen-based attendance sheets are difficult to manage. So, here we have proposed an application for attendance management which will be implemented as an android application.
 
 ## User Roles:
