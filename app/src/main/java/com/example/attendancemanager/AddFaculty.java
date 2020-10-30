@@ -66,9 +66,6 @@ public class AddFaculty extends AppCompatActivity {
                     }
                 });
 
-
-                Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
-                startActivity(I);
                 //setContentView(R.layout.home_screen);
             }
         });
