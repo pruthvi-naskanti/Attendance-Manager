@@ -49,11 +49,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     public void loginclick(View v) {
         userrole =spinner.getSelectedItem().toString();
+        String pass_word = pswd.getText().toString().trim();
         if(userrole.equals("Admin")) {
             String user_name = UserName.getText().toString().trim();
             if (TextUtils.isEmpty(user_name))
             {
                 UserName.setError("Invalid User Name");
+            }
+            else if(TextUtils.isEmpty(pass_word))
+            {
+                pswd.setError("enter password");
             }
             Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
             startActivity(I);
