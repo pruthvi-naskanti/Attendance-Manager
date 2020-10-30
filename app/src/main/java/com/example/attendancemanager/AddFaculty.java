@@ -8,8 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AddFaculty extends AppCompatActivity {
@@ -49,6 +53,18 @@ public class AddFaculty extends AppCompatActivity {
                     password.setError("Password is Empty");
                     return;
                 }
+                fAuth.createUserWithEmailAndPassword(usrname,pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(AddFaculty.this,"User Successfully added",Toast.LENGTH_LONG).show();
+                            Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
+                            startActivity(I);
+                        }else{
+                            Toast.makeText(AddFaculty.this,"Error Occured"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
 
 
                 Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
