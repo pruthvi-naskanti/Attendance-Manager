@@ -60,8 +60,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             {
                 pswd.setError("enter password");
             }
-            Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
-            startActivity(I);
+            else
+            {
+                if(user_name.equals("admin") & pass_word.equals("admin")){
+                    Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
+                    startActivity(I);
+                    Toast.makeText(getApplicationContext(), "Admin Login successful", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Admin Login failed", Toast.LENGTH_SHORT).show();
+                }
+            }
             //setContentView(R.layout.home_screen);
         }
         else{
