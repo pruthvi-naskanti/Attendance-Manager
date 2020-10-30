@@ -1,5 +1,6 @@
 package com.example.attendancemanager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -83,8 +87,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 pswd.setError("Password is Empty");
                 return;
             }
-            Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
-            startActivity(I);
+
+            fAuth.signInWithEmailAndPassword(usrname,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(MainActivity.this,"Faculty Successfully Logged in",Toast.LENGTH_LONG).show();
+                        Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
+                        startActivity(I);
+                    }else{
+                        Toast.makeText(MainActivity.this,"Error Occured"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
             //setContentView(R.layout.add_attendance);
         }
 
