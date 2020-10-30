@@ -74,8 +74,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         else{
             String usrname=UserName.getText().toString().trim();
+            String pwd=pswd.getText().toString().trim();
             if(TextUtils.isEmpty(usrname)){
                 UserName.setError("Username is Required");
+                return;
+            }
+            if(TextUtils.isEmpty(pwd)){
+                pswd.setError("Password is Empty");
                 return;
             }
             Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
