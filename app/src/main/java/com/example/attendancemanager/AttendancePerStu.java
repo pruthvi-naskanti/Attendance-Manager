@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AttendancePerStu extends AppCompatActivity {
 
-    String[] data={"Id No 101: Student 1","Id No 102: Student 2","Id No 103: Student 3"};
+    String[] data={"Id No 101: Student 1: 5 ","Id No 102: Student 2: 8","Id No 103: Student 3: 6"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
