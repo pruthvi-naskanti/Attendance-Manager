@@ -29,12 +29,14 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_attendance);
         submit=findViewById(R.id.buttonsubmit);
+
         date = (ImageButton) findViewById(R.id.DateImageButton);
         cal = Calendar.getInstance();
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH);
         dyear = cal.get(Calendar.YEAR);
         dateEditText = (EditText) findViewById(R.id.DateEditText);
+
     }
 
     public void view_attendance(View v){
