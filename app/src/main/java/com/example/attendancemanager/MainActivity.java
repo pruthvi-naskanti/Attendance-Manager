@@ -73,6 +73,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             //setContentView(R.layout.home_screen);
         }
         else{
+            String usrname=UserName.getText().toString().trim();
+            if(TextUtils.isEmpty(usrname)){
+                UserName.setError("Username is Required");
+                return;
+            }
             Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
             startActivity(I);
             //setContentView(R.layout.add_attendance);
