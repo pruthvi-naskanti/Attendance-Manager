@@ -40,12 +40,12 @@ public class AddFaculty extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String usrname=UserName.getText().toString().trim();
-                String pwd=password.getText().toString().trim();
+                String pswd=password.getText().toString().trim();
                 if(TextUtils.isEmpty(usrname)){
                     UserName.setError("Username is Required");
                     return;
                 }
-                if(TextUtils.isEmpty(pwd)){
+                if(TextUtils.isEmpty(pswd)){
                     password.setError("Password is Empty");
                     return;
                 }
