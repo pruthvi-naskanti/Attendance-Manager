@@ -2,6 +2,7 @@ package com.example.attendancemanager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +39,11 @@ public class AddFaculty extends AppCompatActivity {
         B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String usrname=UserName.getText().toString().trim();
+                if(TextUtils.isEmpty(usrname)){
+                    UserName.setError("Username is Required");
+                    return;
+                }
                 Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
                 startActivity(I);
                 //setContentView(R.layout.home_screen);
