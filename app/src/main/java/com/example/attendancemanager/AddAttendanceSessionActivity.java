@@ -1,10 +1,13 @@
 package com.example.attendancemanager;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -66,6 +69,15 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
         startActivity(I);
         //setContentView(R.layout.listview_main);
     }
-
+    protected Dialog onCreateDialog(int id) {
+        return new DatePickerDialog(this, datePickerListener, dyear, month, day);
+    }
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            dateEditText.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
+        }
+    };
 
 }
