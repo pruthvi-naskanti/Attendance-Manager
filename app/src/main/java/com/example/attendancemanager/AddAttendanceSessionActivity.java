@@ -36,6 +36,14 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
         month = cal.get(Calendar.MONTH);
         dyear = cal.get(Calendar.YEAR);
         dateEditText = (EditText) findViewById(R.id.DateEditText);
+        date.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                showDialog(0);
+
+            }
+        });
 
     }
 
