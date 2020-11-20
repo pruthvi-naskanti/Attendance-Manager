@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Attendance Manager</string>
+    <string name="please_try_again">Please try again...</string>
     <string-array name="spinnerloginas_items">
         <item>Admin</item>
         <item>Faculty</item>
@@ -21,5 +22,17 @@
         <item>ML</item>
         <item>ADB</item>
     </string-array>
+
+    <string name="username_already_exist">Username already exists</string>
+    <string name="faculty_deleted">Faculty Deleted Successfully!</string>
+    <string name="username_cannot_empty">Username cannot be empty!</string>
+    <string name="username">Username</string>
+    <string name="student_added">Student Added Successfully!</string>
+    <string name="first_name_cannot_empty">First name cannot be empty!</string>
+    <string name="last_name_cannot_empty">Last name cannot be empty!</string>
+    <string name="student_id_empty">Student ID cannot be empty!</string>
+    <string name="student_not_exist">Student not exist</string>
+    <string name="student_deleted">Student deleted successfully!</string>
+    <string name="select_date_first">Please select date first</string>
 
 </resources> 
