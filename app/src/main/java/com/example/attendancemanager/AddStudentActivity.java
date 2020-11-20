@@ -53,7 +53,7 @@ public class AddStudentActivity extends AppCompatActivity {
 
     public void submit(View v) {
         String  firstName = etFirstName.getText().toString();
-        String  lastName = etFirstName.getText().toString();
+        String  lastName = etLastName.getText().toString();
 
         if (!validateInputs(firstName,lastName)) return;
         fetchRecentStudentId(firstName,lastName,spinnerDept.getSelectedItem().toString(),spinnerYear.getSelectedItem().toString());
