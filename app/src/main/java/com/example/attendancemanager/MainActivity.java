@@ -5,106 +5,149 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.attendancemanager.other.Constants;
+import com.example.attendancemanager.other.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Button login;
-    Spinner spinner;
-    String userrole;
-    FirebaseAuth fAuth;
-    EditText UserName;
-    EditText pswd;
-
+    private Spinner spinner;
+    private FirebaseFirestore db;
+    private EditText etUsername,etPassword;
+    private SharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        login=findViewById(R.id.loginBtn);
-        spinner=findViewById(R.id.spinnerloginas);
+
+        sharedPref= SharedPref.getInstance();
+        String loginType = sharedPref.isLoggedIn(this);
+        if (!loginType.isEmpty()){
+            if (loginType.equals(Constants.ADMIN)){
+                startActivity(new Intent(this,HomeScreenActivity.class));
+            }else{
+                startActivity(new Intent(this,AddAttendanceSessionActivity.class));
+            }
+            finish();
+        }
+
+        db = FirebaseFirestore.getInstance();
+
+        etUsername = findViewById(R.id.username);
+        etPassword = findViewById(R.id.password);
+
+        spinner = findViewById(R.id.spinnerloginas);
         spinner.setOnItemSelectedListener(this);
-        fAuth=FirebaseAuth.getInstance();
-        UserName=findViewById(R.id.username);
-        pswd=findViewById(R.id.password);
 
     }
 
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,adapterView.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
     public void loginclick(View v) {
-        userrole =spinner.getSelectedItem().toString();
-        String pass_word = pswd.getText().toString().trim();
-        if(userrole.equals("Admin")) {
-            String user_name = UserName.getText().toString().trim();
-            if (TextUtils.isEmpty(user_name))
-            {
-                UserName.setError("Invalid User Name");
-            }
-            else if(TextUtils.isEmpty(pass_word))
-            {
-                pswd.setError("enter password");
-            }
-            else
-            {
-                if(user_name.equals("admin") & pass_word.equals("admin")){
-                    Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
-                    startActivity(I);
-                    Toast.makeText(getApplicationContext(), "Admin Login successful", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Admin Login failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-            //setContentView(R.layout.home_screen);
-        }
-        else{
-            String usrname=UserName.getText().toString().trim();
-            String pwd=pswd.getText().toString().trim();
-            if(TextUtils.isEmpty(usrname)){
-                UserName.setError("Username is Required");
-                return;
-            }
-            if(TextUtils.isEmpty(pwd)){
-                pswd.setError("Password is Empty");
-                return;
-            }
 
-            fAuth.signInWithEmailAndPassword(usrname,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(MainActivity.this,"Faculty Successfully Logged in",Toast.LENGTH_LONG).show();
-                        Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
-                        startActivity(I);
-                    }else{
-                        Toast.makeText(MainActivity.this,"Error Occured"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
 
-            //setContentView(R.layout.add_attendance);
-        }
+        if (!validateInput(username,password)) return;
 
+        authenticateUser(username,password);
     }
 
+    private boolean validateInput(String username, String password) {
+
+        if (username.isEmpty()) {
+            Toast.makeText(this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (password.isEmpty()) {
+            Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (password.length() < 4 || password.length() >= 20) {
+            Toast.makeText(this, "Password must be at least 4 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void authenticateUser(String username, String password){
+
+        String userrole = spinner.getSelectedItem().toString();
+        if (userrole.equals("Admin")) {
+            authenticateAdmin(username, password);
+        } else {
+            authenticateFaculty(username, password);
+        }
+    }
+
+    private void authenticateFaculty(String username, String password) {
+        db.collection("faculty")
+                .whereEqualTo("username", username)
+                .whereEqualTo("password", password)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult() != null) {
+                                if (task.getResult().size() == 1) {
+                                    sharedPref.setLoginType(MainActivity.this,Constants.FACULTY);
+                                    Intent I = new Intent(getApplicationContext(), AddAttendanceSessionActivity.class);
+                                    startActivity(I);
+                                    finish();
+                                    return;
+                                }
+                            }
+                        }
+                        Toast.makeText(MainActivity.this, "Faculty not exist", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void authenticateAdmin(String username, String password){
+        db.collection("admins")
+                .whereEqualTo("username", username)
+                .whereEqualTo("password", password)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult() != null) {
+                                if (task.getResult().size() == 1) {
+                                    sharedPref.setLoginType(MainActivity.this,Constants.ADMIN);
+                                    Intent I = new Intent(getApplicationContext(), HomeScreenActivity.class);
+                                    startActivity(I);
+                                    finish();
+                                    return;
+                                }
+                            }
+                        }
+                        Toast.makeText(MainActivity.this, "Admin not exist", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
 
 }
