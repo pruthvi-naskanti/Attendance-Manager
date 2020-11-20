@@ -46,7 +46,7 @@ public class AttendancePerStudentAdapter extends RecyclerView.Adapter<Attendance
             isPresence = "Absent";
         }
 
-        holder.name.setText(item.getId() + " " + item.getFirstName() + " " + item.getLastName() + " " + "Present : " + Utils.getTotalPresent(item) +" " +  isPresence);
+        holder.name.setText(item.getId() + " " + item.getFirstName() + " " + item.getLastName() + " " +  Utils.getTotalPresent(item) +" " +  isPresence);
     }
 
     @Override
