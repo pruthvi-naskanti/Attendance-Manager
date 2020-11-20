@@ -131,7 +131,7 @@ If a faculty member navigates to the screen clicking this button, monitor in-det
 
 
 
-
+![](https://raw.githubusercontent.com/pruthvi-naskanti/Attendance-Manager/67dc029e5df21e695345e689588024ed5f7f8eec/Appflow.PNG)
 
                             
 
