@@ -1,24 +1,64 @@
 package com.example.attendancemanager;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.attendancemanager.adapter.AttendancePerStuAdapter;
+import com.example.attendancemanager.adapter.AttendancePerStudentAdapter;
+import com.example.attendancemanager.models.Student;
+import com.example.attendancemanager.other.Constants;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class AttendancePerStu extends AppCompatActivity {
 
-    String[] data={"Id No 101: Student 1: 5 ","Id No 102: Student 2: 8","Id No 103: Student 3: 6"};
+    private FirebaseFirestore db;
+    private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_main);
 
-        ListView lv=(ListView) findViewById(R.id.listview);
+        db = FirebaseFirestore.getInstance();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);
-
-        lv.setAdapter(arrayAdapter);
+        recyclerView = findViewById(R.id.listview);
+        fetchStudentAttendance();
     }
+
+    private void fetchStudentAttendance(){
+
+        db.collection(Constants.student)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            ArrayList<Student> data = new ArrayList<>();
+                            for (QueryDocumentSnapshot item : task.getResult()){
+                                data.add(item.toObject(Student.class));
+                            }
+                            AttendancePerStuAdapter adapter = new AttendancePerStuAdapter(data);
+                            recyclerView.setAdapter(adapter);
+                        }else {
+                            Toast.makeText(AttendancePerStu.this, getString(R.string.please_try_again), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+    }
+
 }
