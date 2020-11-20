@@ -6,6 +6,22 @@
 * Vishal Reddy
 * Bhaskar Minupuri
 
+## [NOTE]:
+This application will be support on Android versions 8.0(Oreo) and above i.e(API level : 26 and above).
+
+## Application Information:
+For signing into our application and to check funtionality of our application, we have added a faculty account to our app. Credentials for both ADMIN and FACULTY accounts are 
+mentioned below.
+
+### For ADMIN module:
+Username : admin
+password : admin
+
+### For FACULTY module:
+Username : faculty
+Password : faculty
+
+
 ## Statement of Purpose:
 Our idea is to develop an application where faculty will be able to enter, monitor and manage attendance. This attendance system will be installed on the smartphone of the instructor. We aim to create an interface for the instructor that would require limited input information from the professor for marking the attendance of a class. 
 
