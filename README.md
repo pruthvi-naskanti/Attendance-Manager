@@ -126,12 +126,39 @@ To mark attendance, faculty should click on the name of the student which result
 
 ## View total Attendance:
 If a faculty member navigates to the screen clicking this button, monitor in-detail attendance of any student each day with respect to department, intake and subject.
+
+
+## Sequence Information:
+Login Module:
+ It Contains Admin and Facutlty
+
+ Based on Selection you should be providing the Username and password.
+ If it is Admin then it directs you to the prompted screen that contains 8 tabs
+ 1. ADD STUDENT
+ VIEW STUDENT
+ REMOVE STUDENT
+ ATTENDENCE PER STUDENT
+ ADD FACULTY
+ VIEW FACULTY
+ REMOVE FACULTY
+ LOGOUT
+
+
+- On clicking "ADD Student" takes you to the page  where we can add students by providing their firstName,LastName, Dept and Year. then on clicking the submit button the data     will be stored to the FireBase database.
+
+- View Student button will direct you to the page where you can view the attendence of each student by providing their branch and year. and then submitting it.
+
+- REMOVE STUDENT button will prompt a page where you will be deleting the particular student by entering their ID's
+
+- ATTENDENCE PER STUDENT will provide the attendence records of all the students.
+
+- ADD FACULTY buttons helps in faculty registration
+  
+- VIEW FACULTY hepls to view te records of the faculty 
+  
+- REMOVE FACULTY   will remove faculty from the databse by entering the faculty username and then clicking the delete button.
  
-
-
-
-
-                            
+- LOGOUT button logs you out of the application.
 
 
 
