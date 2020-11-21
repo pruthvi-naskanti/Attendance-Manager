@@ -133,7 +133,7 @@ Login Module:
  It Contains Admin and Facutlty
 
  Based on Selection you should be providing the Username and password.
- If it is Admin then it directs you to the prompted screen that contains 8 tabs
+ If it is Admin then it directs you to the prompted screen that contains 8 buttons
  1. ADD STUDENT
  VIEW STUDENT
  REMOVE STUDENT
@@ -160,9 +160,17 @@ Login Module:
  
 - LOGOUT button logs you out of the application.
 
+If you select FACULTY, then it directs you to the prompted screen that contains 4 buttons VIEW TOTAL ATTENDANCE, ADD ATTENDANCE, LOGOUT and fields to select department, year, subject and date.
 
 
 
+- On clicking VIEW TOTAL ATTENDANCE, you will be re-directed to screen where you can see students list with total attendance.
+
+- On selecting department, year, subject and date and clicking ADD ATTENDANCE, you will be re-directed to screen where you will see list of all students in the class registered 
+  with options PRESENT and ABSENT to mark.
+  
+- On Clicking LOGOUT, you will be signed-out of the application.
+  
 
 
 
