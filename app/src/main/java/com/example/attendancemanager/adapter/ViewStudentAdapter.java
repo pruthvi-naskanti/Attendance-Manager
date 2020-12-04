@@ -33,7 +33,7 @@ public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewStudentViewHolder holder, int position) {
         Student item = data.get(position);
-        holder.name.setText(item.getId() + " " + item.getFirstName() + " " + item.getLastName());
+        holder.name.setText("ID: "+item.getId() + ", Name " + item.getFirstName() + "." + item.getLastName());
     }
 
     @Override
