@@ -61,7 +61,7 @@ public class ViewTotalAttendanceAdapter extends RecyclerView.Adapter {
                 availability = "Absent";
             }
 
-            ((StudentViewHolder) holder).textView.setText(item.getId() + " " + item.getFirstName() + " " + item.getLastName() + " " + availability);
+            ((StudentViewHolder) holder).textView.setText("ID: "+item.getId() + ", Name: " + item.getFirstName() + "." + item.getLastName() + "->" + availability);
         }else{
             ((StudentViewHolder) holder).textView.setText((String) data.get(position));
         }

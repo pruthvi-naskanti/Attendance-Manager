@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.attendancemanager.R;
-import com.example.attendancemanager.models.Faculty;
+import com.example.attendancemanager.models.*;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
     @Override
     public void onBindViewHolder(@NonNull FacultyViewHolder holder, int position) {
        Faculty item = data.get(position);
-       holder.name.setText(item.getFirstName() + " " +item.getLastName() );
+       holder.name.setText("Name : "+item.getFirstName()+"."+item.getLastName() + "         Username :"+item.getUsername());
     }
 
     @Override
