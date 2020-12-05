@@ -32,8 +32,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
     @Override
     public void onBindViewHolder(@NonNull FacultyViewHolder holder, int position) {
        Faculty item = data.get(position);
-       holder.name.setText("Name : "+item.getFirstName()+"."+item.getLastName() + "         Username :"+item.getUsername());
-    }
+holder.name.setText("Name : "+item.getFirstName()+"."+item.getLastName() + " Username :"+item.getUsername()+ " Password: "+item.getPassword());    }
 
     @Override
     public int getItemCount() {
