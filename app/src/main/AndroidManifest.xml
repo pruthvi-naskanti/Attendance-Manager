@@ -18,57 +18,57 @@
         </activity>
         <activity
             android:name="com.example.attendancemanager.HomeScreenActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.AddAttendanceActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
 
         <activity
             android:name="com.example.attendancemanager.ViewTotalAttendanceStudentActivityFacultyModule"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
 
         <activity
             android:name="com.example.attendancemanager.ViewStudentActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.AddStudentActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.RemoveStudentActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.AddAttendanceSessionActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.ViewAttendanceByFacultyActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.AttendancePerStu"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.AddFaculty"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.RemoveFacultyActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.ViewFacultyActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
         <activity
             android:name="com.example.attendancemanager.ViewStudentListActivity"
-            android:label="AndroidAttendanceManager">
+            android:label="Attendance Manager">
         </activity>
 
         <activity android:name=".DialogueActivity"></activity>

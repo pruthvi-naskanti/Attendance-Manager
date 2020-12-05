@@ -34,7 +34,7 @@ public class AttendancePerStuAdapter extends RecyclerView.Adapter<AttendancePerS
     public void onBindViewHolder(@NonNull AttendanceViewHolder holder, int position) {
         Student item = data.get(position);
 
-        holder.name.setText(item.getId() + " " + item.getFirstName() + " " + item.getLastName() + " " + "Present : " + Utils.getTotalPresent(item));
+        holder.name.setText("ID : "+item.getId() + "\nName : " + item.getFirstName() + " " + item.getLastName() +  "\nPresent : " + Utils.getTotalPresent(item));
     }
 
     @Override
